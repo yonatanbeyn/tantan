@@ -20,4 +20,4 @@ with open('html.txt','r') as text_to_parse:
 
 
 soup = BeautifulSoup(new_text, 'html.parser')
-print(soup.prettify())#preetify view
+print(soup.prettify())#prettify view
