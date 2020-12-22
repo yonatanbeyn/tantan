@@ -5,15 +5,16 @@ url=input("enter the url :")
 response=requests.get(url)
 #print(resp.status_code)
 
-
 if response.status_code == 200:
     print('Success!')
 elif response.status_code == 404:
     print('Not Found.')
+    
  #opening file and store the content to parse useful data antime
 f = open("html.txt", "w")
 f.write(response.text)
 f.close()
+
 #here open the text file
 with open('html.txt','r') as text_to_parse:
     new_text=text_to_parse.read()
