@@ -1,3 +1,4 @@
+from bs4 import BeautifulSoup
 import requests
 url=input("enter the url :")
 
@@ -9,7 +10,14 @@ if response.status_code == 200:
     print('Success!')
 elif response.status_code == 404:
     print('Not Found.')
- #opening file and store the content for parsing useful data
+ #opening file and store the content to parse useful data antime
 f = open("html.txt", "w")
 f.write(response.text)
 f.close()
+#here open the text file
+with open('html.txt','r') as text_to_parse:
+    new_text=text_to_parse.read()
+
+
+soup = BeautifulSoup(new_text, 'html.parser')
+print(soup.prettify())#preetify view
