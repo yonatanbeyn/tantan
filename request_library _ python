@@ -1,0 +1,15 @@
+import requests
+url=input("enter the url :")
+
+response=requests.get(url)
+#print(resp.status_code)
+
+
+if response.status_code == 200:
+    print('Success!')
+elif response.status_code == 404:
+    print('Not Found.')
+ #opening file and store the content for parsing useful data
+f = open("html.txt", "w")
+f.write(response.text)
+f.close()
